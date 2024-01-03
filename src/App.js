@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+/*bawaan react*/
+import React from 'react';
+
+/*bagian asset*/
+import logo from './logo192.png';
+
+/*bagian components*/
+import Menu from './components/menu';
+import Movielist from './components/movielist';
+/*bagian style*/
+import './App.css'
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <>
+      {/* Header */}
+      <div className='container mb-3'>
+        <div className='navbar navbar-light bg-dark w-100 h-100 d-inline-block'>
+          <img src={logo} alt='anime jpg' height={100} width={100} />
+          <span className='navbar-brand text-light h1'>OtakuNime</span>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className='container'>
+        <p className='d-flex justify-content-end text-light bg-dark w-100 h-100' style={{ padding: '10px' }}>
+          Daftar Semua Anime
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+        <div className='d-flex justify-content-start'>
+          {/* Navigation Menu */}
+          <Menu></Menu>
+
+          
+          <div className='col-10 d-flex justify-content-start '>
+            {/* Anime Cards */}
+            <Movielist></Movielist>
+          </div>
+          
+        </div>
+      </div>
+    </>
   );
 }
 
