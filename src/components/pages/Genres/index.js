@@ -1,11 +1,16 @@
 import React from 'react'
+import Genrelist from '../../Genrelist'
 
-function index() {
+function Genres() {
   return (
-    <div>
+    <>  
+
+    <Genrelist>
       
-    </div>
+    </Genrelist>
+    
+    </>
   )
 }
 
-export default index
+export default Genres

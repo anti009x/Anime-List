@@ -1,11 +1,11 @@
 import React from 'react'
 
-function index() {
+function Admin() {
   return (
     <div>
-      
+      Admin
     </div>
   )
 }
 
-export default index
+export default Admin
