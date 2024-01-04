@@ -1,11 +1,12 @@
 import React from 'react'
+import Movielist from '../../movielist'
 
-function index() {
+function Movie() {
   return (
-    <div>
-      
-    </div>
+   <>
+   <Movielist></Movielist>
+   </>
   )
 }
 
-export default index
+export default Movie
