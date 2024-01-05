@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Movielist() {
   const [movie, setmovie] = useState([]);
@@ -29,7 +30,9 @@ function Movielist() {
                       </p>
                     </div>
                     <div className='card-footer d-flex justify-content-center'>
-                      <small className='text-muted'>Last updated 3 mins ago</small>
+                    <a href="#" className="btn btn-primary">
+                <Link to={`/movie/${movie.id}`} style={{textDecoration : 'none',color:'white'}}>Check Detail!</Link>
+                </a>
                     </div>
                   </div>
                 </div>
