@@ -13,6 +13,7 @@ import Home from './components/pages/Home';
 import Genres from './components/pages/Genres';
 import Movielist from './components/movielist';
 import Admin from './components/pages/Admin';
+import Moviesdetail from './components/pages/Movies';
 
 
 
@@ -49,14 +50,17 @@ function App() {
               <Route path='/genres' element={<Genres/>}/>
               <Route path='/movie' element={<Movielist/>}/>
               <Route path='/admin' element={<Admin/>}/>
+              
             </Routes>
           </div>
           
         </div>
-        <div className='col-4 d-flex justify-content-start '>
+        <div className=' '>
       <Routes>
               <Route path='/menu' element={<Menu/>}/>
-            </Routes>
+              <Route  path='/moviedetail' element={<Moviesdetail/>}/>
+              <Route exact path='/movie/:id' element={<Moviesdetail/>}/>
+        </Routes>
           
       </div>
       </div>
