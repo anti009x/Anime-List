@@ -4,8 +4,8 @@ import Genrelist from '../../Genrelist'
 function Genres() {
   return (
     <>  
-
-
+{/* 
+    <Genrelist></Genrelist> */}
     
     </>
   )
