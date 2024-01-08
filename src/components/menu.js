@@ -6,7 +6,7 @@ const Menu = () => {
   <>
 
  
-     <div className='position-fixed '  style={{ marginLeft: '20rem' }}>
+     <div className='position-fixed 'style={{ marginLeft: '20rem' }}>
       <h1>WELCOME MY YOUTUBE CHANNEL</h1>
     </div>
     <div className='col-2' >

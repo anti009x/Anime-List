@@ -5,9 +5,7 @@ function Genres() {
   return (
     <>  
 
-    <Genrelist>
-      
-    </Genrelist>
+
     
     </>
   )
