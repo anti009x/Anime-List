@@ -14,6 +14,9 @@ import Genres from './components/pages/Genres';
 import Movielist from './components/movielist';
 import Admin from './components/pages/Admin';
 import Moviesdetail from './components/pages/Movies';
+import Login from './components/pages/Login';
+
+
 
 
 
@@ -21,7 +24,18 @@ import Moviesdetail from './components/pages/Movies';
 
 function App() {
   return (
+
+  <>
+
+  <Router>
+    <Routes>
+    <Route path='/login' element={<Login/>}></Route>
+    </Routes>
+  </Router>
+
     <Router>
+
+
       {/* Header */}
       <div className='container mb-3'>
         <div className='navbar navbar-light bg-dark w-100 h-100 d-inline-block'>
@@ -32,10 +46,13 @@ function App() {
 
       {/* Main Content */}
       <div className='container'>
-        <p className='d-flex justify-content-start text-light bg-dark w-100 h-100' style={{ padding: '10px' }}>
-        <Link to='/movie' style={{textDecoration: 'none', color:'yellow',marginTop:2,marginRight:3}}>Daftar Semua Anime</Link> ||
-          <Link to='/menu' style={{textDecoration: 'none', color:'red',marginLeft:4,marginTop:2}}>MENU</Link>
-          
+        <p className='text-light bg-dark w-100 h-100' style={{ padding: '10px' }}>
+        <Link to='/movie' style={{textDecoration: 'none', color:'yellow',marginTop:2,marginRight:3,}}>Daftar Semua Anime</Link> ||
+          <Link to='/menu' style={{textDecoration: 'none', color:'red',marginRight:3,marginTop:2,marginLeft:4}}>MENU</Link> ||
+          <Link to ='/' style={{textDecoration : 'none',color : 'yellow',marginRight:3,marginTop:2,marginLeft:4}}>HOME</Link> || 
+          <div className='d-flex justify-content-end' >
+          <Link to = '/login' style={{textDecoration : 'none',color : 'yellow'}}  >LOGIN</Link>
+          </div>
         </p>
 
         <div className='d-flex justify-content-center mr-4'>
@@ -43,16 +60,6 @@ function App() {
           
       {/* <Menu></Menu> */}
           
-          <div className='col-10 d-flex justify-content-center mr-4'>
-            {/* Anime Cards */}
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/genres' element={<Genres/>}/>
-              <Route path='/movie' element={<Movielist/>}/>
-              <Route path='/admin' element={<Admin/>}/>
-              
-            </Routes>
-          </div>
           
         </div>
         <div className=' '>
@@ -60,13 +67,18 @@ function App() {
               <Route path='/menu' element={<Menu/>}/>
               <Route  path='/moviedetail' element={<Moviesdetail/>}/>
               <Route exact path='/movie/:id' element={<Moviesdetail/>}/>
+              <Route path='/admin' element={<Admin/>}/>
+        
+              <Route path='/movie' element={<Movielist/>}/>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/genres' element={<Genres/>}/>
         </Routes>
           
       </div>
       </div>
     
     </Router>
-    
+    </>
   );
 }
 
