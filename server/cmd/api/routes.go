@@ -14,6 +14,8 @@ func (app *application) routes() *httprouter.Router {
 
 	router.HandlerFunc(http.MethodGet, "/status", app.statusHandler)
 
-	return router
+	//menambah routing movie
+	router.HandlerFunc(http.MethodGet, "/movies/:id", app.getOneMovie) // Perbaikan path di sini
 
+	return router
 }
