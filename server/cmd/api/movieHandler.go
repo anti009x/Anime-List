@@ -7,7 +7,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-// create function movie
+// get movie berdasarkan id pada database
 func (app *application) getOneMovie(rw http.ResponseWriter, r *http.Request) {
 
 	params := httprouter.ParamsFromContext(r.Context())
@@ -37,4 +37,25 @@ func (app *application) getOneMovie(rw http.ResponseWriter, r *http.Request) {
 	err = app.writeJSON(rw, http.StatusOK, movie, "movie")
 }
 
-//end dummy data movie
+//end section
+
+// get semua movie dari database
+func (app *application) getAllMovies(rw http.ResponseWriter, r *http.Request) {
+
+	//dummy data movie
+	movies, err := app.models.DB.All()
+	if err != nil {
+		// Handle error here, misalnya kirim error JSON response
+		app.errorJSON(rw, err)
+		return
+	}
+	// Lanjutkan jika tidak ada error
+	err = app.writeJSON(rw, http.StatusOK, movies, "movies")
+	if err != nil {
+		// Handle error here, misalnya kirim error JSON response
+		app.errorJSON(rw, err)
+		return
+	}
+}
+
+//end section
