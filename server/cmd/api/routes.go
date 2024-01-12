@@ -9,13 +9,14 @@ import (
 )
 
 // inisialiasi routing
-func (app *application) routes() *httprouter.Router {
+func (app *application) routes() http.Handler {
 	router := httprouter.New()
 
 	router.HandlerFunc(http.MethodGet, "/status", app.statusHandler)
 
 	//menambah routing movie
 	router.HandlerFunc(http.MethodGet, "/movies/:id", app.getOneMovie) // Perbaikan path di sini
-
-	return router
+	router.HandlerFunc(http.MethodGet, "/movies", app.getAllMovies)
+	//menambah routing middleware
+	return app.enableCORS(router)
 }
